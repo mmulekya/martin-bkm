@@ -30,11 +30,16 @@ display: grid;
 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 gap: 15px;
 margin-top: 20px;
+column-count: 2;
+padding: 10px;
 }
 .gallery img {
 width: 100%;
+margin-bottom: 15px;
 border-radius: 10px;
-transition: transform 0.3s ease;
+cursor: pointer;
+opacity: 0.9;
+transition: transform 0.2s, opacity o.2s;
 }
 .gallery img:hover {
 transform: scale(1.05);
