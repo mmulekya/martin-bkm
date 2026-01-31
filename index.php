@@ -164,10 +164,10 @@ address a {
     </style>
     <link rel="icon" type="image/png" href="electric.PNGS">
     <nav>
-    <a href="aboutme.html">About me</a>
-    <a href="photo.html">Photos</a>
-    <a href="video.html">Videos</a>
-    <a href="music.html">Music</a>
+    <a href="aboutme.php">About me</a>
+    <a href="photo.php">Photos</a>
+    <a href="video.php">Videos</a>
+    <a href="music.php">Music</a>
         </nav>
 </head>
 <body>
@@ -183,7 +183,7 @@ address a {
     </form>
 
     <p>Already have an account?
-      <a href="login.html">Login</a>
+      <a href="login.php">Login</a>
     </p>
   </div>
 
@@ -199,10 +199,10 @@ address a {
         <div class="footer-section footerbla-links">
             <h4>Explore</h4>
             <ul>
-                <li><a href="aboutme.html">About me</a></li>
-                <li><a href="photo.html">Photos</a></li>
-                <li><a href="video.html">Videos</a></li>
-                <li><a href="music.html">Music</a></li>
+                <li><a href="aboutme.php">About me</a></li>
+                <li><a href="photo.php">Photos</a></li>
+                <li><a href="video.php">Videos</a></li>
+                <li><a href="music.php">Music</a></li>
             </ul>
         </div>
 
@@ -248,6 +248,7 @@ address a {
 
 </body>
 </html>
+
 
 
 
