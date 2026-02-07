@@ -11,6 +11,7 @@
   --bg:#0f1724;
   --card:#fff;
 }
+
 *{box-sizing:border-box}
 
 body{
