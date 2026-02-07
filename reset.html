@@ -1,1 +1,21 @@
+<?php
+include "db.php";
+
+$token = $_GET['token'] ?? '';
+
+$check = $conn->query("
+  SELECT id FROM users 
+  WHERE reset_token='$token' 
+  AND reset_expire > NOW()
+");
+
+if ($check->num_rows !== 1) {
+  die("Invalid or expired link");
+}
+?>
+
+<form method="post">
+  <input type="password" name="password" placeholder="New password" required>
+  <button type="submit">Reset Password</button>
+</form>
 
