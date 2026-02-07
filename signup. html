@@ -1,1 +1,49 @@
+<?php
+include "db.php";
+$error = "";
 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $username = trim($_POST['username']);
+    $email    = trim($_POST['email']);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+    $stmt = $conn->prepare("SELECT id FROM users WHERE username=? OR email=?");
+    $stmt->bind_param("ss", $username, $email);
+    $stmt->execute();
+
+    if ($stmt->get_result()->num_rows > 0) {
+        $error = "Username or email already exists";
+    } else {
+        $stmt = $conn->prepare(
+          "INSERT INTO users (username, email, password) VALUES (?,?,?)"
+        );
+        $stmt->bind_param("sss", $username, $email, $password);
+        $stmt->execute();
+
+        header("Location: login.php");
+        exit;
+    }
+}
+?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Create Account</h2>
+
+<form method="post">
+  <input name="username" placeholder="Username" required>
+  <input name="email" type="email" placeholder="Email" required>
+  <input name="password" type="password" placeholder="Password" required>
+  <button>Create account</button>
+</form>
+
+<p style="color:red"><?= $error ?></p>
+
+<p>
+<a href="login.php">Already have an account?</a>
+</p>
+
+</body>
+</html>
